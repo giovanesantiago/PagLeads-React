@@ -4,8 +4,9 @@ import logo from "../Estilo/imagens/logo.png"
 const Header = () => {
     return (
         <header className="topo">
-              <Image src={logo} alt="logo royal enfield" width="200px"/>
+            <Image src={logo} alt="logo royal enfield" w="200px"/>
         </header>
+        
     )
 }
 

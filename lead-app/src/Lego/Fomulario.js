@@ -5,6 +5,8 @@ import Label from "../Components/Label";
 import Option from "../Components/Option";
 
 
+
+
 class Form extends React.Component {
     constructor(props) {
         super(props)
@@ -27,7 +29,15 @@ class Form extends React.Component {
     }
 
     enviar(event) {
-        alert('O nome enviado : ' + this.state.nome + '\n O telefone enviado : ' + this.state.telefone + '\n O email enviado foi : ' + this.state.email + '\n O moto enviado foi : ' + this.state.moto + '\n O Pagamento enviado foi : ' + this.state.pag)
+        const dados = {
+            nome: this.state.nome,
+            telefone: this.state.telefone,
+            email: this.state.email,
+            moto: this.state.moto,
+            pagamento: this.state.pag
+        }
+        
+        const json = await dados.json()
         
         event.preventDefault()
     }
@@ -35,6 +45,8 @@ class Form extends React.Component {
     render() {
         return (
             <form onSubmit={this.enviar}>
+                <h1 className="grande">Preencha os dados e click em enviar :</h1>
+                <br/>
                 <div className="mb-3">
                     <Label  txt="Nome" />
                     <Input name="nome" type='text' value={this.state.nome} enviar={this.alterar} id2="exampleInputPassword1"/>
@@ -48,7 +60,7 @@ class Form extends React.Component {
                     <Label for="exampleInputEmail1" txt="Email address" />
                     <Input name="email" type='email' value={this.state.email} enviar={this.alterar} id2="exampleInputEmail1" aria-describedby="emailHelp"/>
                 </div>
-                <select id="moto" name="moto" value={this.state.moto} onChange={this.alterar} class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                <select id="moto" name="moto" value={this.state.moto} onChange={this.alterar} className="form-select form-select-sm" aria-label=".form-select-sm example" >
                     <Option selected txt="Motocicleta" />
                     <Option n='Meteor 350' txt="Meteor 350" />
                     <Option n='Himalayan 411' txt="Himalayan 411"/>
@@ -56,7 +68,7 @@ class Form extends React.Component {
                     <Option n='Continetal 650 twin' txt="Continetal 650 twin"/>
                     <option value="4"></option>
                 </select>
-                <select id="pag" name="pag" value={this.state.pag} onChange={this.alterar} class="form-select form-select-sm" aria-label=".form-select-sm example" >
+                <select id="pag" name="pag" value={this.state.pag} onChange={this.alterar} className="form-select form-select-sm" aria-label=".form-select-sm example" >
                     <Option selected txt="Forma de pagamento" />
                     <Option n='A vista' txt="A vista" />
                     <Option n='Cartão' txt="Cartão"/>
@@ -64,9 +76,14 @@ class Form extends React.Component {
                     <option value="3"></option>
                 </select>
                 <Button />
+                <p> </p>
+                <br/> 
+                <h1 className="grande">Ou acesse alguma das nossas redes socias :</h1>
             </form>
         )
     }
 }
+
+
 
 export default Form

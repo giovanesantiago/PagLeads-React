@@ -2,7 +2,7 @@
 
 const Button = (props) => {
     return (
-        <button type="submit" className="btn btn-primary">Enviar</button>
+        <button onClick={props.funcao} type="submit" className="botao btn btn-primary">Enviar</button>
     )
 }
 
