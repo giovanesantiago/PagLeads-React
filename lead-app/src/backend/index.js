@@ -9,7 +9,7 @@ function enviarForm(dados) {
         secure: true,
         auth: {
             user: "royal.ba2022@gmail.com",
-            pass: "gs362498"
+            pass: ""
         }
     });
 
