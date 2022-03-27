@@ -34,10 +34,7 @@ header{
     text-align: center;
 }
 
-.grande{
-    font-weight: 900;
-    font-size: 1.5em;
-}
+
 
 .botao{
     margin-top: 30px;
@@ -51,6 +48,7 @@ header{
 input, select {
     height: 50px;
     font-size: 2.1em;
+    
 }
 
 footer{
